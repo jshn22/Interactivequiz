@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JS Fundamentals Quiz</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <section class="landing" id="landing">
+      <div class="hero-bg">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-left center-hero">
+          <h1 class="neon hero-title">BrainByte Quiz</h1>
+          <p class="neon">Boost your skills with fun, fast, interactive quizzes!</p>
+          <div class="hero-cta">
+            <button class="btn" id="quickStart">Quick Start</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz" id="quiz" aria-live="polite" hidden>
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <div class="card" id="card">
+        <div class="meta">
+          <div class="question-count" id="questionCount">Question 1</div>
+          <div class="timer" id="timer">00:15</div>
+        </div>
+        <h2 class="question" id="question">Loading...</h2>
+  <ul class="options" id="options"></ul>
+  <div class="feedback" id="feedback" aria-live="polite"></div>
+
+        <div class="controls">
+          <button class="btn" id="nextBtn" disabled>Next</button>
+          <button class="btn ghost" id="restartBtn">Restart</button>
+        </div>
+      </div>
+
+      <div class="result" id="result" hidden>
+        <h2 id="resultTitle">Your Score</h2>
+        <p id="resultText"></p>
+        <div class="result-actions">
+          <input id="playerName" type="text" placeholder="Enter your name" aria-label="Player name" />
+          <button class="btn" id="saveScore">Save Score</button>
+          <button class="btn" id="playAgain">Play Again</button>
+        </div>
+        <div class="highscores" id="highscores" aria-live="polite">
+          <h3>High Scores</h3>
+          <ol id="highscoreList"></ol>
+        </div>
+      </div>
+        <!-- Modal for name entry -->
+        <div id="nameModal" class="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalTitle">
+          <div class="modal-backdrop" id="modalBackdrop"></div>
+          <div class="modal-panel" role="document">
+            <h3 id="modalTitle">Save your score</h3>
+            <p id="modalDesc">Enter your name to save your high score (or leave blank to save as Anonymous).</p>
+            <input id="modalNameInput" type="text" placeholder="Your name" aria-label="Name input" />
+            <div class="modal-actions">
+              <button class="btn" id="modalSave">Save</button>
+              <button class="btn ghost" id="modalSkip">Skip</button>
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+  <div id="toastContainer" class="toasts" aria-live="polite" aria-atomic="true"></div>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
